@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo de Adivinhação</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">
+          Mentalista
+        </h1>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" class="page-logo" alt="">
+      </div>
+      <a href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+        <img src="https://caelum-online-public.s3.amazonaws.com/assets-imersaodev/Ilustra%C3%A7%C3%A3o-c%C3%A9rebro+1.png">
+      </a>
+
+      <script>
+        var numeroSecreto = parseInt(Math.random() * 1001)
+        var contChutes = 1
+        var numTentativas = 20
+
+        while (chute != numeroSecreto) {
+            var numTentRest = numTentativas - contChutes
+            var chute = prompt('Digite um numero de 1 a 1000')
+
+            if (chute > 0 && chute <= 1001 ) {
+                if (chute == numeroSecreto) {
+                    alert('Acertou'+'\nNumeros de chutes: '+ contChutes)
+                }
+                else if (chute > numeroSecreto ){
+                    alert('Numero é menor do que '+ chute+'\nNumeros de chutes: '+ contChutes+'\nNumero de tentativas restantes: '+numTentRest)
+                }
+                else if (chute < numeroSecreto){
+                    alert('Numero é maior do que ' + chute+'\nNumeros de chutes: '+ contChutes+'\nNumero de tentativas restantes: '+numTentRest)
+                }
+                else {
+                    alert('Errou'+'\nNumeros de chutes: '+ contChutes+'\nNumero de tentativas restantes: '+numTentRest)
+                }
+            }
+            else {
+                alert('Numero inválido, Digite apenas um numero dentro do intervalo de 1 a 1000')
+            }
+        contChutes += 1
+        }
+      </script>
+</body>
+</html>
