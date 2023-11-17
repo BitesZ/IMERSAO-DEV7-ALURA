@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">
+          Aluraflix
+        </h1>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" class="page-logo" alt="">
+      </div>
+      <a href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+      </a>
+      <script>
+        //Dá pra colocar tudo dentro da lista mas eu preferi deixar do jeito que tá pq eu já sei como faz e acho que fica mais organizado do jeito que está
+        var listaSeries = []
+
+        listaSeries[0] = "https://br.web.img3.acsta.net/pictures/20/10/29/07/43/0901799.jpg"
+        listaSeries[1] = "https://sm.ign.com/ign_pt/screenshot/default/1-jon-snow-got-season-8-for-the-throne-character-poster_vgz9.jpg"
+        listaSeries[2] = "https://i.pinimg.com/736x/bf/1c/56/bf1c56608dce29f7c9302b17c9839e92.jpg"
+        listaSeries[3] = "https://image.tmdb.org/t/p/original/mOUV08EAZ86mXvN8fNUowYAnmLy.jpg"
+        listaSeries[4] = "https://img.elo7.com.br/product/zoom/1DFAEEB/poster-cartaz-breaking-bad-serie-netflix-sucesso.jpg"
+        listaSeries[5] = "https://store.skybound.com/cdn/shop/files/S2E2.png"
+        listaSeries[6] = "https://i.redd.it/sc3zl568pjt61.jpg"
+
+        //Obtenção da extensão da imagem
+        var extensao = []
+        var listaSeriesExt = []
+
+
+        for(i = 0; i < listaSeries.length;i++){
+          extensao = listaSeries[i].lastIndexOf(".jpg");
+          extensaopos = listaSeries[i].substring(extensao);
+          listaSeriesExt[i] = extensaopos;
+        }
+
+        //Nomes das series
+
+        var listaNomeSeries = []
+
+        listaNomeSeries[0] = "Alice in Bordeland"
+        listaNomeSeries[1] = "Game of Thrones"
+        listaNomeSeries[2] = "House of the Dragon"
+        listaNomeSeries[3] = "Arcane"
+        listaNomeSeries[4] = "Breaking Bad"
+        listaNomeSeries[5] = "Invincible"
+        listaNomeSeries[6] = "Invincible"
+
+        /*
+        for (i = 0; i < listaSeries.length; i++) {
+
+          document.write("<img src = "+ listaSeries[i] +">");
+        }
+        */
+
+        //Alterando para While
+        var i = 0
+
+        while (i < listaSeries.length) {
+          //Verificação da extensão
+          if (listaSeriesExt[i] == ".jpg") {
+            //Exibição dos nomes das séries
+            document.write('<div class = "serie">');
+            document.write('<span class = "nomeserie">'+listaNomeSeries[i]+"</span>");
+            document.write("<img src = "+ listaSeries[i]+">");
+            document.write("</div>");
+          }
+          i++
+        }
+      </script>
+</body>
+</html>
